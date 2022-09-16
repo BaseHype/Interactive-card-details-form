@@ -11,6 +11,7 @@
     color: hsl(228, 45%, 44%);
 }
 
+/* background styling */
 .background-main {
     background: url(../images/bg-main-desktop.png);
     background-size: cover;
@@ -25,6 +26,7 @@
     z-index: 1;
 }
 
+/* card front styling */
 .card-front-container {
     background: url(../images/bg-card-front.png);
     background-size: cover;
@@ -37,8 +39,40 @@
     height: 245px;
     scale: 80%;
 
+    font-family: 'Space Grotesk', sans-serif;
+    color: hsl(0, 0%, 100%);
 
     z-index: 2;
+}
+
+.card-front-container svg {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+}
+
+.card-front-container .card-info {
+    display: grid;
+    margin: 120px auto 0 auto;
+    width:85%;
+    grid-template-columns: 60% 40%;
+    row-gap: 10px;
+}
+
+.card-front-container #card-number {
+    grid-column: 1/3;
+    align-self: center;
+    justify-self: center;
+
+    font-size: 36px;
+}
+
+.card-front-container #card-holder {
+    justify-self : left;
+}
+
+.card-front-container #expiry-date {
+    justify-self: right;
 }
 
 .card-back-container {
@@ -53,9 +87,24 @@
     height: 245px;
     scale: 80%;
 
+    font-family: 'Space Grotesk', sans-serif;
+    color: hsl(0, 0%, 100%);
+
     z-index: 2;
 }
 
-.background-form {
+.card-back-container #CVC-number {
+    align-self: center;
+    margin: 0px 60px 5px auto;
 
+    font-size: 18px;
 }
+
+
+.background-form {
+    display: flex;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+}
+
