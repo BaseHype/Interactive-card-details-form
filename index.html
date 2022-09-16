@@ -5,47 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./css/style.css">
   
   <title>Frontend Mentor | Interactive card details form</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
+  <div class="background-main"></div>
 
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
+  <div class="card-front-container">
+    <svg width="84" height="47" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="23.478" cy="23.5" rx="23.478" ry="23.5" fill="#fff"/><path d="M83.5 23.5c0 5.565-4.507 10.075-10.065 10.075-5.559 0-10.065-4.51-10.065-10.075 0-5.565 4.506-10.075 10.065-10.075 5.558 0 10.065 4.51 10.065 10.075Z" stroke="#fff"/></svg>
+    <div class="card-info">
+      <div id="card-number">0000 0000 0000 0000</div>
+      <div id="card-holder">Jane Appleseed</div>
+      <div id="expiry-date">00/00</div>
+    </div>
+  </div>
 
-  000
+  <div class="card-back-container">
+    <div id="CVC-number">000</div>
+  </div>
+  
+  <div class="background-form">
+    Cardholder Name
+    e.g. Jane Appleseed
 
-  Cardholder Name
-  e.g. Jane Appleseed
+    Card Number
+    e.g. 1234 5678 9123 0000
 
-  Card Number
-  e.g. 1234 5678 9123 0000
+    Exp. Date (MM/YY)
+    MM
+    YY
 
-  Exp. Date (MM/YY)
-  MM
-  YY
+    CVC
+    e.g. 123
 
-  CVC
-  e.g. 123
-
-  Confirm
+    Confirm
+  </div>
 
   <!-- Completed state start -->
 
-  Thank you!
-  We've added your card details
-  Continue
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <div>
+    Thank you!
+    We've added your card details
+    Continue
   </div>
+  
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </footer>
 </body>
 </html>
