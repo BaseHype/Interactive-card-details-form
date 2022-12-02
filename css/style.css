@@ -1,45 +1,52 @@
 /* Imports */
-@import url(https://fonts.google.com/specimen/Space+Grotesk);
+@import url('https://fonts.googleapis.com/css?family=Space Grotesk');
 
-/* main style code */
-.attribution { 
+.attribution {
     font-size: 11px;
-    text-align: center;
+    text-align:center;
 }
 
 .attribution a {
     color: hsl(228, 45%, 44%);
 }
 
-/* background styling */
+/*background styling*/
+
+body {
+    margin: 0;
+    grid-template-columns: auto auto auto;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
 .background-main {
     background: url(../images/bg-main-desktop.png);
     background-size: cover;
 
-    display: flex;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 30%;
-    height: 100%;
-    
+    display: inline-block;
+    margin: 0;
+
+    width: 30vw;
+    height: 100vh;
+
     z-index: 1;
 }
 
-/* card front styling */
+/*card front styling*/
 .card-front-container {
     background: url(../images/bg-card-front.png);
     background-size: cover;
 
     display: flex;
     position: absolute;
-    top: 20%;
-    left: 10%;
+    
+    top: 18vh;
+    left: 10vw;
+
     width: 447px;
     height: 245px;
     scale: 80%;
 
-    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
     color: hsl(0, 0%, 100%);
 
     z-index: 2;
@@ -47,47 +54,58 @@
 
 .card-front-container svg {
     position: absolute;
-    top: 25px;
-    left: 25px;
+    margin-top: 25px;
+    margin-left: 25px;
 }
 
 .card-front-container .card-info {
     display: grid;
+
     margin: 120px auto 0 auto;
-    width:85%;
+    
+    width: 85%;
+
     grid-template-columns: 60% 40%;
-    row-gap: 10px;
+    row-gap: 5px;
 }
 
 .card-front-container #card-number {
     grid-column: 1/3;
+
     align-self: center;
     justify-self: center;
 
-    font-size: 36px;
+    font-size: 32px;
 }
 
 .card-front-container #card-holder {
-    justify-self : left;
+    justify-self: left;
 }
 
 .card-front-container #expiry-date {
     justify-self: right;
 }
 
+.card-front-container .expiry-date #expiry-month, #expiry-year{
+    display: inline-block;
+}
+
+/*card back styling*/
 .card-back-container {
     background: url(../images/bg-card-back.png);
     background-size: cover;
 
     display: flex;
     position: absolute;
-    top: 50%;
-    left: 15%;
+
+    top: 50vh;
+    left: 15vw;
+
     width: 447px;
     height: 245px;
     scale: 80%;
 
-    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
     color: hsl(0, 0%, 100%);
 
     z-index: 2;
@@ -95,16 +113,139 @@
 
 .card-back-container #CVC-number {
     align-self: center;
+
     margin: 0px 60px 5px auto;
-
-    font-size: 18px;
 }
 
-
+/* form styling */
 .background-form {
-    display: flex;
+    display: block;
     position: absolute;
-    top: 20%;
-    left: 50%;
+
+    top: 20vh;
+    left: 55vw;
+}
+.background-form form {
+    display: grid;
+
+    width: 60%;
+    grid-template-columns: 50% 50%;
+    row-gap: 5px;
+
+    font-size: 12px;
+    font-weight: 700;
+    color: hsl(278, 68%, 11%);
 }
 
+.background-form form fieldset {
+    border: none;
+}
+
+input[type="text"] {
+    margin-top: 10px;
+    margin-bottom: 1px;
+    padding: 5px 10px;
+
+    border: 1px solid gray;
+    border-radius: 10px;
+
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: hsl(279, 6%, 55%);
+}
+.background-form #holder-name {
+    grid-column: 1/3;
+}
+
+.background-form #holder-name input {
+    height: 30px;
+    width: 100%;
+}
+
+.background-form #holder-number {
+    grid-column: 1/3;
+}
+
+.background-form #holder-number input {
+    height: 30px;
+    width: 100%;
+}
+
+.background-form #holder-date, #holder-code {
+    padding: 5px 10px;
+}
+
+.background-form #holder-date input {
+    height: 30px;
+    width: 20%;
+
+    text-align: center;
+}
+
+.background-form #holder-code input {
+    height: 30px;
+    width: 100%;
+}
+
+
+.background-form #confirm {
+    grid-column: 1/3;
+    margin: 7px 5px;
+    width: 100%;
+}
+
+button[type="submit"] {
+    background-color:  hsl(278, 68%, 11%);
+    height: 50px;
+    width: 100%;
+
+    border: none;
+    border-radius: 10px;
+
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: hsl(0, 0%, 100%);
+}
+
+.error {
+    color: red;
+    font-size: 0.75rem;
+    margin: 0 10px;;
+}
+
+.confirmation-form {
+    display: block;
+    position: absolute;
+
+    top: 20vh;
+    left: 55vw;
+}
+
+.confirmed {
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.btn-continue {
+    background-color:  hsl(278, 68%, 11%);
+    height: 40px;
+    width: 100%;
+
+    border: none;
+    border-radius: 10px;
+
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: hsl(0, 0%, 100%);
+}
+
+.display-none {
+    display: none;
+}

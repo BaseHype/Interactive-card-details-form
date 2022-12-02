@@ -1,61 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="./css/style.css">
-  
-  <title>Frontend Mentor | Interactive card details form</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <title>Frontend Mentor | Interactive card details form</title>
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <div class="background-main"></div>
 
-</head>
-<body>
-  <div class="background-main"></div>
-
-  <div class="card-front-container">
-    <svg width="84" height="47" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="23.478" cy="23.5" rx="23.478" ry="23.5" fill="#fff"/><path d="M83.5 23.5c0 5.565-4.507 10.075-10.065 10.075-5.559 0-10.065-4.51-10.065-10.075 0-5.565 4.506-10.075 10.065-10.075 5.558 0 10.065 4.51 10.065 10.075Z" stroke="#fff"/></svg>
-    <div class="card-info">
-      <div id="card-number">0000 0000 0000 0000</div>
-      <div id="card-holder">Jane Appleseed</div>
-      <div id="expiry-date">00/00</div>
+    <div class="card-front-container">
+      <svg width="84" height="47" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="23.478" cy="23.5" rx="23.478" ry="23.5" fill="#fff"/><path d="M83.5 23.5c0 5.565-4.507 10.075-10.065 10.075-5.559 0-10.065-4.51-10.065-10.075 0-5.565 4.506-10.075 10.065-10.075 5.558 0 10.065 4.51 10.065 10.075Z" stroke="#fff"/></svg>
+      <div class="card-info">
+        <div id="card-number">0000 0000 0000 0000</div>
+        <div id="card-holder">JANE APPLESEED</div>
+        <div id="expiry-date"><span class="month">00</span>/<span class="year">00</span></div>
+      </div>
     </div>
-  </div>
 
-  <div class="card-back-container">
-    <div id="CVC-number">000</div>
-  </div>
-  
-  <div class="background-form">
-    Cardholder Name
-    e.g. Jane Appleseed
-
-    Card Number
-    e.g. 1234 5678 9123 0000
-
-    Exp. Date (MM/YY)
-    MM
-    YY
-
-    CVC
-    e.g. 123
-
-    Confirm
-  </div>
-
-  <!-- Completed state start -->
-
-  <div>
-    Thank you!
-    We've added your card details
-    Continue
-  </div>
-  
-  <footer>
-    <div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
+    <div class="card-back-container">
+      <div id="CVC-number">000</div>
     </div>
-  </footer>
-</body>
+
+    <div class="background-form">
+      <form action="" class="form">
+        <fieldset id="holder-name">
+          <label for="name">CARDHOLDER NAME</label><br>
+          <input type="text" id="name" name="name" placeholder="e.g. Jane Appleseed" onkeyup="test()" required/>
+          <p class="error name-error display-none">hi</p>
+        </fieldset>
+        <fieldset id="holder-number">
+          <label for="number">CARD NUMBER</label><br>
+          <input type="text" id="number" name="number" placeholder="e.g. 1234 5678 9123 0000" pattern="[0-9\s]{16,}" required/>
+          <p class="error number-error display-none">hi</p>
+        </fieldset>
+        <fieldset id="holder-date">
+          <label>EXP. DATE (MM/YY)</label><br>
+          <input type="text" id="month" name="month" placeholder="MM" required/>
+          <input type="text" id="year" name="year" placeholder="YY" required/>
+          <p class="error month-error year-error display-none">hi</p>
+        </fieldset>
+        <fieldset id="holder-code">
+          <label for="code">CVC</label><br>
+          <input type="text" id="code" name="code" placeholder="e.g. 123" pattern="[0-9]{3}" required/>
+          <p class="error cvc-error display-none">hi</p>
+        </fieldset>
+        <div id="confirm">
+          <button type="submit">Confirm</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Completed state start -->
+    <div class="confirmation-form">
+      <div class="confirmed display-none">
+        <div class="icon-complete">
+          <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="40" fill="url(#a)"/><path d="M28 39.92 36.08 48l16-16" stroke="#fff" stroke-width="3"/><defs><linearGradient id="a" x1="-23.014" y1="11.507" x2="0" y2="91.507" gradientUnits="userSpaceOnUse"><stop stop-color="#6348FE"/><stop offset="1" stop-color="#610595"/></linearGradient></defs></svg>
+        </div>
+        <h1>Thank you!</h1>
+        <p>We've added your card details</p>
+        <button class="btn-continue">Continue</button>
+      </div>
+    </div>
+  
+    
+    <footer>
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#">Your Name Here</a>.
+      </div>
+    </footer>
+  </body>
 </html>
