@@ -125,6 +125,7 @@ body {
     top: 20vh;
     left: 55vw;
 }
+
 .background-form form {
     display: grid;
 
@@ -248,4 +249,115 @@ button[type="submit"] {
 
 .display-none {
     display: none;
+}
+
+
+/** media queries **/
+@media screen and (max-width: 375px) {
+    .background-main {    
+        width: 100%;
+        height: 30vh;
+    
+        z-index: 1;
+    }
+
+    .card-front-container {
+        top: 3vh;
+        left: -30%;
+
+        scale: 50%;
+
+        z-index: 3;
+    }
+
+    .card-back-container {
+        top: -11vh;
+        left: -15%;
+
+        scale: 50%;
+    
+        z-index: 2;
+    }
+
+    .background-form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+        top: 40vh;
+        left: -10%;
+
+        width: 100%;
+    }
+
+    .background-form form {
+        width: 70%;
+        grid-template-columns: 60% 40%;
+        row-gap: 5px;
+    
+        font-size: 10px;
+    }
+
+    input[type="text"] {
+        margin-top: 2px;
+        margin-bottom: 1px;
+        padding: 1px 5px;
+
+        border: 1px solid gray;
+        border-radius: 10px;
+    
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 10px;
+        font-weight: 500;
+        color: hsl(279, 6%, 55%);
+    }
+
+    button[type="submit"] {
+        background-color:  hsl(278, 68%, 11%);
+        height: 30px;
+        width: 100%;
+    
+        border: none;
+        border-radius: 10px;
+    
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        color: hsl(0, 0%, 100%);
+    }
+
+    .error {
+        color: red;
+        font-size: 7px;
+        margin: 0 10px;;
+    }
+
+    .confirmation-form {
+        display: block;
+        position: absolute;
+    
+        width: 100%;
+
+        top: 40vh;
+        left: 0;
+    }
+    
+    .confirmed {
+        margin: 0;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .btn-continue {
+        background-color:  hsl(278, 68%, 11%);
+        height: 30px;
+        width: 80%;
+    }
+
+    .display-none {
+        display: none;
+    }
 }
