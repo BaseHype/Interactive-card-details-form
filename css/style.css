@@ -14,7 +14,6 @@ body {
     background: url(../images/bg-main-desktop.png);
     background-size: cover;
 
-    display: inline-block;
 
     width: 30%;
     height: 100vh;
@@ -309,7 +308,7 @@ button[type="submit"] {
         display: block;
 
         width: 100%;
-        height: 35vh;
+        height: 160px;
     
         z-index: 1;
     }
@@ -324,7 +323,7 @@ button[type="submit"] {
     }
 
     .card-back-container {
-        top: -10vh;
+        top: 40px;
         left: 10vh;
 
         scale: 50%;
@@ -338,7 +337,7 @@ button[type="submit"] {
         align-items: center;
         justify-content: center;
     
-        top: 50vh;
+        top: 270px;
         left: 0vh;
 
         width: 90%;
@@ -406,7 +405,27 @@ button[type="submit"] {
     }
 
     .card-back-container {
-        top: -10vh;
+        top: -6vh;
         left: 0vh;
+    }
+}
+
+@media only screen and (max-width: 321px) {
+    .card-front-container {
+        top: 5vh;
+        left: -10vh;
+
+        scale: 50%;
+    
+        z-index: 3;
+    }
+
+    .card-back-container {
+        top: -10vh;
+        left: 10vh;
+
+        scale: 50%;
+
+        z-index: 2;
     }
 }
