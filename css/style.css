@@ -4,42 +4,36 @@
 
 /* background styling */
 * {
-    /*border: 1px solid black;*/
-}
-
-
-body {
+    border: 1px solid black;
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    font-family: 'Space Grotesk', sans-serif;
 }
 
-.container {
-    display: grid;
-    grid-template-columns: 25% 75%;
-    column-gap: 5px;
-    height: 100vh;
+body {
+    overflow: hidden;
+    font-family: 'Space Grotesk', sans-serif;
 }
 
 .background-main {
     background: url(../images/bg-main-desktop.png);
     background-size: cover;
+    width:450px;
+    height: 100vh;
     z-index: 1;
 }
 
 
-/*card front styling*/
+/* card front styling */
 .card-front-container {
     background: url(../images/bg-card-front.png);
     background-size: cover;
-    display: flex;
-    position: absolute;
-    top: 15vh;
-    left: 5vw;
-    width: 358px;
-    height: 196px;
-    font-size: 16px;
+    position:absolute;
+    top: 10vh;
+    left: 150px;
+    width: 447px;
+    height: 245px;
+    font-size: 17px;
     color: hsl(0, 0%, 100%);
     z-index: 2;
 }
@@ -48,69 +42,60 @@ body {
     position: absolute;
     margin-top: 5%;
     margin-left: 5%;
-    scale: 80%;
 }
 
 .card-front-container .card-info {
     display: grid;
-    margin: 110px auto 0 auto;
-    width: 85%;
     grid-template-columns: 60% 40%;
     row-gap: 5px;
+    margin: 140px auto 0 auto;
+    width: 85%;
 }
 
 .card-front-container #card-number {
     grid-column: 1/3;
     align-self: center;
     justify-self: center;
-    font-size: 26px;
+    font-size: 34px;
 }
 
 .card-front-container #card-holder {
     justify-self: left;
-    margin-left: 10px;
 }
 
 .card-front-container #expiry-date {
     justify-self: right;
-    margin-right: 10px;
 }
 
 
-/*card back styling*/
+/* card back styling */
 .card-back-container {
     background: url(../images/bg-card-back.png);
     background-size: cover;
-    display: flex;
     position: absolute;
-    top: calc(15vh + 196px + 0.5vh);
-    left: 7vw;
-    width: 358px;
-    height: 196px;
-    font-size: 16px;
+    top: calc(10vh + 245px + 2vh);
+    left: 250px;
+    width: 447px;
+    height: 245px;
+    font-size: 17px;
     color: hsl(0, 0%, 100%);
     z-index: 2;
 }
 
 .card-back-container #CVC-number {
-    align-self: center;
-    margin: 0px 50px 4px auto;
+    position: absolute;
+    top:45%;
+    right: 13%;
 }
 
 
 /* form styling */
-.background-form {
-    display: grid;
-    justify-content: center;
-    width: 70%;
-    margin-left: 20vw;
-}
-
 input[type="text"] {
     margin-top: 5px;
     margin-bottom: 1px;
-    padding: 2px 5px;
+    padding: 3px 10px;
     height: 40px;
+    width: 100%;
     border: 1px solid gray;
     border-radius: 10px;
     font-size: 16px;
@@ -118,54 +103,40 @@ input[type="text"] {
     color: hsl(279, 6%, 55%);
 }
 
+.background-form {
+    position: absolute;
+    top: 20vh;
+    left: 850px;
+}
+
 .background-form form {
     display: grid;
-    margin: 0 auto;
-    margin-top: 15vh;
-    width: 65%;
-    height: 50%;
     grid-template-columns: 50% 50%;
-    row-gap: 1px;
-
-    font-size: 12px;
+    row-gap: 20px;
+    width: 70%;
+    min-width: 330px;
+    font-size: 13px;
     font-weight: 700;
     color: hsl(278, 68%, 11%);
 }
 
 .background-form form fieldset {
+    padding: 1px;
     border: none;
-    margin: 0;
-    height: auto;
-}
-
-.background-form form label {
-    font-size: 16px;
 }
 
 .background-form #holder-name {
     grid-column: 1/3;
 }
 
-.background-form #holder-name input {
-    width: 100%;
-}
-
 .background-form #holder-number {
     grid-column: 1/3;
 }
 
-.background-form #holder-number input {
-    width: 100%;
-}
 
-
-.background-form #holder-date, #holder-code {
-    padding: 5px 10px;
-}
 
 .background-form #holder-date input {
     width: 30%;
-
     text-align: center;
 }
 
@@ -180,46 +151,48 @@ input[type="text"] {
 }
 
 button[type="submit"] {
-    background-color:  hsl(278, 68%, 11%);
-    margin: -5px;
+    background-color: hsl(278, 68%, 11%);
+    margin-left: -5px;
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    color:hsl(0, 0%, 100%);
+}
+
+.error {
+    margin-left: 8px;
+    font-size: 12px;
+    color: red;
+}
+
+
+
+/* confirmation form styling */
+.confirmation-form {
+    position: absolute;
+    top: 25vh;
+    left: 850px;
+}
+
+.confirmed {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: center;
+    justify-content:center;
+    width: 100%;
+    min-width: 330px;
+}
+
+.btn-continue {
+    background-color: hsl(278, 68%, 11%);
     height: 50px;
     width: 100%;
     border: none;
     border-radius: 10px;
     font-size: 16px;
-    font-weight: 500;
-    color: hsl(0, 0%, 100%);
-}
-
-.error {
-    color: red;
-    font-size: 0.65rem;
-    margin: 0 5px;;
-}
-
-.confirmation-form {
-    position: absolute;
-    top: 25vh;
-    left: 55vw;
-}
-
-.confirmed {
-    margin: 0 auto;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.btn-continue {
-    background-color:  hsl(278, 68%, 11%);
-    height: 40px;
-    width: 150%;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: 500;
     color: hsl(0, 0%, 100%);
 }
 
@@ -227,210 +200,316 @@ button[type="submit"] {
     display: none;
 }
 
-@media only screen and (min-width: 1025px) {
+@media only screen and (max-width: 1024px) {
+    .background-main {
+        width:350px;
+    }
+
     .card-front-container {
-        left: 10vw;
+        left: 100px;
+        width: 402px;
+        height: 221px;
+        font-size: 15px;
+    }
+
+    .card-front-container svg {
+        transform: scale(90%);
+        margin-top: 4%;
+        margin-left: 4%;
+    }
+
+    .card-front-container #card-number {
+        font-size: 30px;
     }
 
     .card-back-container {
-        left: 12vw;
+        top: calc(10vh + 221px + 2vh);
+        left: 150px;
+        width: 402px;
+        height: 221px;
+        font-size: 15px;
     }
 
-    .background-form form {
-        margin-top: 20vh;
+    .background-form {
+        top: 20vh;
+        left: 650px;
+        height:auto;
     }
-    
+
     .confirmation-form {
         position: absolute;
-        top: 30vh;
-        left: 60vw;
+        top: 25vh;
+        left: 650px;
     }
 }
 
 @media only screen and (max-width: 768px) {
-    .card-front-container {
-        left: 4vw;
-        width: 268px;
-        height: 147px;
-        font-size: 12px
+    body {
+        overflow: auto;
     }
 
-    .card-front-container svg {
-        scale: 60%;
-    }
-
-    .card-front-container .card-info {
-        margin: 90px auto 0 auto;
-        row-gap: 2px;
-    }
-
-    .card-front-container #card-number {
-        font-size: 19px;
+    .background-main {
+        width: 100%;
+        height: 350px;
     }
 
     .card-back-container {
-        top: calc(15vh + 147px + 0.5vh);
-        width: 268px;
-        height: 147px;
-        font-size: 12px;
-    }
-    
-    .card-back-container #CVC-number {
-        align-self: center;
-        margin: 0px 30px 2px auto;
+        top: 50px;
+        left: calc(50vw - 180px);
+        width: 447px;
+        height: 245px;
+        font-size: 17px;
     }
 
-    .background-form form label {
-        font-size: 12px;
+
+    .card-front-container {
+        top: 198px;
+        left: calc(50vw - 267px);
+        width: 447px;
+        height: 245px;
+        font-size: 17px;
+        z-index: 3;
+    }
+
+    .card-front-container svg {
+        transform: scale(100%);
+        margin-top: 5%;
+        margin-left: 5%;
+    }
+
+    .card-front-container #card-number {
+        font-size: 34px;
+    }
+
+    .background-form {
+        top: 500px;
+        left: 0px;
+        width: 100%;
+    }
+
+    .background-form form {
+        margin: 0 auto;
+        font-size: 15px;
     }
 
     input[type="text"] {
-        margin-bottom: 4px;
-        height: 30px;
-        font-size: 14px;
+        height: 50px;
+        font-size: 18px;
+    }
 
+    button[type="submit"] {
+    height: 60px;
+    font-size: 18px;
+    }
+
+    .error {
+        font-size: 14px;
+    }
+
+    .confirmation-form {
+    top: 600px;
+    left: 0px;
+    width: 100%;
+    }
+
+    .btn-continue {
+        height: 50px;
+        width: 80%;
+        max-width: 360px;
     }
 }
 
 @media only screen and (max-width: 426px) {
-    body {
-        overflow: visible;
+    .background-main {
+        height: 250px;
     }
-
-    .container {
-        grid-template-columns: 100%;
-        grid-template-rows: 40% auto;
-        row-gap: 5px;
-    }
-
-    .card-front-container {
-        top: 20vh;
-        left: 10vw;
-        z-index: 3;
-    }
-
+    
     .card-back-container {
-        top: 2vh;
-        left: 25vw;
-    }
-
-    .background-form {
-        width: 80%;
-        margin-left: 10vw;
-    }
-
-    .background-form form {
-        margin-top: 20vh;
-        width: 80%;
-    }
-
-    button[type="submit"] {
-        height: 40px;
-    }
-
-    .error {
-        color: red;
-        font-size: 0.55rem;
-        margin: 0 5px;
-    }
-
-    .confirmation-form {
-    position: absolute;
-    top: 55vh;
-    left: 22vw;
-    }
-
-    .btn-continue {
-        width: 100%;
-    }
-}
-
-@media only screen and (max-width: 378px) {
-    .background-form form {
-        margin-top: 16vh;
-        width: 80%;
-    }
-
-    .background-form form label {
-        font-size: 11px;
-    }
-
-    .confirmation-form {
-        left: 25vw;
-        font-size: 12px;
-    }
-
-    .btn-continue {
-        width: 120%;
-        height: 30px;
-    }
-}
-
-@media only screen and (max-width: 322px) {
-    .container {
-        grid-template-columns: 100%;
-        grid-template-rows: 150px auto;
-        row-gap: 5px;
+        top: 30px;
+        left: 70px;
+        width: 313px;
+        height: 172px;
+        font-size: 11.5px;
     }
 
     .card-front-container {
-        width: 223px;
-        height: 123px;
-        top: 85px;
-        left: 15px;
+        top: 130px;
+        left: 10px;
+        width: 313px;
+        height: 172px;
+        font-size: 11.5px;
         z-index: 3;
     }
 
     .card-front-container svg {
-        margin-top: 1.5%;
-        margin-left: 1.5%;
-        scale: 60%;
+        transform: scale(70%);
+        margin-top: 3%;
+        margin-left: 3%;
     }
 
     .card-front-container .card-info {
-        margin: 70px auto 0 auto;
-        row-gap: 1px;
-        font-size: 9px;
+        display: grid;
+        grid-template-columns: 60% 40%;
+        row-gap: 5px;
+        margin: 100px auto 0 auto;
+        width: 85%;
+    }
+
+    .card-front-container #card-number {
+        font-size: 23px;
+    }
+
+    .background-form {
+        top: 350px;
+    }
+
+    .background-form form {
+        font-size: 14px;
+    }
+
+    input[type="text"] {
+        height: 40px;
+        font-size: 16px;
+    }
+
+    button[type="submit"] {
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .error {
+        font-size: 13px;
+    }
+
+    .confirmation-form {
+        top: 400px;
+    }
+
+    .btn-continue {
+        height: 50px;
+        width: 80%;
+        max-width: 360px;
+    }
+}
+
+@media only screen and (max-width: 376px) {
+    .background-main {
+        height: 220px;
+    }
+
+    .card-back-container {
+        left: 70px;
+        width: 268px;
+        height: 147px;
+        font-size: 10px;
+    }
+
+    .card-front-container {
+        top: 120px;
+        left: 10px;
+        width: 268px;
+        height: 147px;
+        font-size: 10px;
+    }
+
+    .card-front-container svg {
+        transform: scale(60%);
+        margin-top: 1%;
+        margin-left: 1%;
+    }
+
+    .card-front-container .card-info {
+        margin: 80px auto 0 auto;
+    }
+
+    .card-front-container #card-number {
+        font-size: 20px;
+    }
+
+    .background-form {
+        top: 320px;
+    }
+
+    .background-form form {
+        margin-bottom: 50px;
+    }
+
+    .confirmation-form {
+        top: 320px;
+    }
+}
+
+@media only screen and (max-width: 321px) {
+    .background-main {
+        height: 170px;
+    }
+    
+    .card-back-container {
+        top: 20px;
+        left: 70px;
+        width: 224px;
+        height: 123px;
+        font-size: 8px;
+    }
+
+    .card-front-container {
+        top: 92px;
+        left: 1px;
+        width: 224px;
+        height: 123px;
+        font-size: 8px;
+    }
+
+    .card-front-container svg {
+        transform: scale(50%);
+        margin-top: 0.5%;
+        margin-left: 0.15%;
+    }
+
+    .card-front-container .card-info {
+        row-gap: 2px;
+        margin: 75px auto 0 auto;
     }
 
     .card-front-container #card-number {
         font-size: 16px;
     }
 
-    .card-back-container {
-        width: 223px;
-        height: 123px;
-        top: 15px;
-        left: 65px;
+    .background-form {
+        top: 260px;
     }
 
-    .background-form {
-        width: 80%;
-        margin-left: 8vw;
+    .background-form form {
+        row-gap: 10px;
+        min-width: 280px;
+        font-size: 12px;
     }
 
     input[type="text"] {
-        margin-top: 5px;
-        margin-bottom: 1px;
-        padding: 2px 5px;
-        height: 20px;
-        border: 1px solid gray;
-        border-radius: 10px;
-        font-size: 11px;
-        font-weight: 500;
-        color: hsl(279, 6%, 55%);
+        height: 30px;
+        font-size: 14px;
     }
 
-    .background-form form label {
-        font-size: 9px;
+    .background-form #holder-date input {
+        width: 35%;
     }
 
     button[type="submit"] {
-        height: 30px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .error {
+        font-size: 11px;
     }
 
     .confirmation-form {
-        top: 48vh;
-        left: 26vw;
+        top: 260px;
+    }
+
+    .btn-continue {
+        height: 40px;
+        width: 70%;
+        max-width: 360px;
     }
 }
